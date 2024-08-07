@@ -2,7 +2,7 @@
 
 ## Project Description :syringe:
 
-This project is directly in line with my mission and venture, <a href="www.sekofia.com" target="_blank">_Sekofia_</a>, as it implements a Deep Q-Learning agent to simulate a health insurance claims processor. The environment is designed as a sequence of steps that a health insurance claim must go through, from patient verification to final approval. The goal of the agent is to navigate through these steps correctly to maximize rewards.
+This project is directly in line with my mission and venture, <a href="https://www.sekofia.com" target="_blank">Sekofia</a>, as it implements a Deep Q-Learning agent to simulate a health insurance claims processor. The environment is designed as a sequence of steps that a health insurance claim must go through, from patient verification to final approval. The goal of the agent is to navigate through these steps correctly to maximize rewards.
 
 ## Project Structure :pill:
 
