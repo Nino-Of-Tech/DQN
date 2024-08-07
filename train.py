@@ -1,4 +1,4 @@
-# import gym
+import gym
 from claim_processor_env import ClaimProcessorEnv
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Flatten

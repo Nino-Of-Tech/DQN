@@ -4,3 +4,4 @@ pygame
 optree
 keras==3.2.0 
 keras-rl2==1.0.5 
+stable-baselines3==2.3.2
