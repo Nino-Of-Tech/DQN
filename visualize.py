@@ -1,7 +1,9 @@
+import pygame
 import gym
 from claim_processor_env import ClaimProcessorEnv
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Flatten
+from keras.optimizers import Adam
 from rl.agents.dqn import DQNAgent
 from rl.policy import EpsGreedyQPolicy
 from rl.memory import SequentialMemory
@@ -13,7 +15,7 @@ pygame.init()
 env = ClaimProcessorEnv()
 nb_actions = env.action_space.n
 
-# Build a simple model (This is required to define the architecture so the weights can be loaded)
+# Build a simple model
 model = Sequential()
 model.add(Flatten(input_shape=(1,) + env.observation_space.shape))
 model.add(Dense(16))
@@ -28,9 +30,9 @@ memory = SequentialMemory(limit=50000, window_length=1)
 policy = EpsGreedyQPolicy()
 dqn = DQNAgent(model=model, nb_actions=nb_actions, memory=memory, nb_steps_warmup=10,
                target_model_update=1e-2, policy=policy)
-dqn.compile(optimizer='adam', metrics=['mae'])
 
 # Load the trained policy weights
+dqn.compile(optimizer=Adam(learning_rate=1e-3), metrics=['mae'])
 dqn.load_weights('dqn_claim_processor_weights.h5f')
 
 # Pygame settings
